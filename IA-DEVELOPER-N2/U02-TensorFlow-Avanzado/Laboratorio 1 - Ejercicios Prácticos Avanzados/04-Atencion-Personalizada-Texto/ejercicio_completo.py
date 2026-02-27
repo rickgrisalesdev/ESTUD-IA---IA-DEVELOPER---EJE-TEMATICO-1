@@ -1,6 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras import layers, models
-from transformers import BertTokenizer, TFBertModel
+#from transformers import BertTokenizer, TFBertModel
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -18,6 +18,7 @@ class CustomAttentionLayer(layers.Layer):
     def __init__(self, units, **kwargs):
         super(CustomAttentionLayer, self).__init__(**kwargs)
         self.units = units
+        self.supports_masking = True
         self.W_q = layers.Dense(units)  # Query
         self.W_k = layers.Dense(units)  # Key
         self.W_v = layers.Dense(units)  # Value
@@ -50,7 +51,13 @@ class CustomAttentionLayer(layers.Layer):
         
         # Aplicar máscara si se proporciona
         if mask is not None:
-            scores += (mask * -1e9)
+            # Convertimos la máscara de booleano a float32
+            mask = tf.cast(mask, tf.float32)
+            # Keras a veces pasa la máscara con forma (batch, seq)
+            # pero necesitamos (batch, 1, seq) para el broadcast con los scores
+            mask = mask[:, tf.newaxis, :]
+            # Aplicamos la máscara (poniendo valores muy bajos donde hay padding)
+            scores += ((1.0 - mask) * -1e9)
         
         # Softmax para obtener pesos de atención
         attention_weights = tf.nn.softmax(scores, axis=-1)
@@ -245,7 +252,7 @@ def build_sentiment_model(vocab_size=10000, embedding_dim=128, max_length=128, n
     embeddings = embedding_layer(input_ids)
     
     # Capa de atención personalizada
-    attention_output = CustomAttentionLayer(64)(embeddings)
+    attention_output = CustomAttentionLayer(64)(embeddings, mask=attention_mask)
     
     # Capa LSTM para contexto secuencial
     lstm_output = layers.Bidirectional(layers.LSTM(64, return_sequences=True))(attention_output)
