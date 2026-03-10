@@ -196,3 +196,50 @@ Al finalizar este laboratorio, los estudiantes serán capaces de:
 - **Adaptar** soluciones a problemas reales
 - **Combinar** múltiples tipos de redes en proyectos complejos
 - **Evaluar** y seleccionar la arquitectura adecuada para cada problema
+
+## 📚 Los 3 Paradigmas de Aprendizaje
+
+### 1. 🎯 Aprendizaje Supervisado
+**Definición:** El modelo aprende a partir de datos etiquetados (input-output pairs)
+
+**Características:**
+- Requiere datos con etiquetas conocidas
+- El modelo aprende a mapear entradas a salidas correctas
+- Es el paradigma más común en aplicaciones prácticas
+
+**Ejemplos en este laboratorio (9 redes - 75%):**
+- **Red Densa:** clasificación tabular, regresión
+- **CNN:** clasificación de imágenes
+- **RNN:** series temporales con etiquetas
+- **LSTM:** traducción automática
+- **Transformers:** clasificación de texto
+- **GNN:** clasificación de nodos
+- **GRU:** análisis de sentimientos
+- **ResNet:** clasificación CIFAR-100
+- **U-Net:** segmentación médica
+
+### 2. 🔍 Aprendizaje No Supervisado
+**Definición:** El modelo aprende patrones en datos sin etiquetas
+
+**Características:**
+- Descubre estructuras ocultas automáticamente
+- Identifica agrupaciones o representaciones latentes
+- No requiere etiquetado manual de datos
+
+**Ejemplos en este laboratorio (2 redes - 17%):**
+- **GAN:** generación de imágenes, data augmentation
+- **Autoencoder:** reducción dimensionalidad, detección de anomalías
+
+### 3. 🎮 Aprendizaje por Reforzamiento
+**Definición:** El modelo aprende mediante interacción con un entorno, recibiendo recompensas o castigos
+
+**Características:**
+- Aprende por ensayo y error
+- Optimiza decisiones secuenciales
+- Desarrolla políticas de acción óptimas
+
+**Ejemplos en este laboratorio (1 red - 8%):**
+- **DQN:** videojuegos, control, robótica
+
+### 🔄 Adaptabilidad entre Paradigmas
+Cada red neuronal puede adaptarse a múltiples paradigmas, pero tiene un **paradigma principal** donde es más comúnmente utilizada. El laboratorio explora tanto el uso principal como las adaptaciones secundarias para cada arquitectura.

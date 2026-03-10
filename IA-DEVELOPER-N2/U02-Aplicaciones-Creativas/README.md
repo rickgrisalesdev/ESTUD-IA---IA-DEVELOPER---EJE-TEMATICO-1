@@ -23,6 +23,16 @@ Esta unidad se enfoca en **aplicaciones creativas** que combinan **Inteligencia 
 - **Objetivo**: Generar guiones y diálogos para películas
 - **Habilidades**: NLP avanzado, generación de texto creativo, storytelling
 
+### **🏔️ Laboratorio 2.4: Sistema de Alerta Temprana de Deslizamientos (Siata-AI)**
+- **Tecnología**: Capas de Atención Personalizada, LSTM, tf.GradientTape
+- **Objetivo**: Monitorear sensores de humedad y movimiento para prevenir deslizamientos
+- **Habilidades**: Procesamiento de series temporales, regularización en datos ruidosos, visualización de atención
+
+### **☕ Laboratorio 2.5: Clasificador de Calidad de Café (AgroTech Antioquia)**
+- **Tecnología**: Functional API, Modelos Multi-Input, Transfer Learning
+- **Objetivo**: Analizar composición química y fotos de granos para clasificar calidad
+- **Habilidades**: Manejo de datasets desbalanceados, fine-tuning, análisis económico
+
 ---
 
 ## 🏗️ **Estructura de la Unidad**
@@ -44,7 +54,16 @@ U02-Aplicaciones-Creativas/
 │   │   └── 📄 README.md             # Instrucciones
 │   │
 │   ├── 📁 Lab-2.2-Generador-Arte/     # Generador de arte digital
-│   └── 📁 Lab-2.3-Asistente-Guiones/  # Asistente de guiones
+│   ├── 📁 Lab-2.3-Asistente-Guiones/  # Asistente de guiones
+│   ├── 📁 Lab-2.4-Sistema-Alerta-Laderas/  # Sistema SIATA-AI
+│   │   ├── 📄 modelo_laderas.py     # Modelo con atención personalizada
+│   │   ├── 📄 sensores_data.txt      # Telemetría de sensores
+│   │   └── 📄 README_U2_Laderas.md   # Guía de regularización
+│   │
+│   └── 📁 Lab-2.5-Clasificador-Cafe/     # AgroTech Antioquia
+│       ├── 📄 cafe_expert.py        # Modelo multi-input
+│       ├── 📄 muestras_lab.txt      # Datos químicos
+│       └── 📄 GUIA_CAFE.md          # Datasets desbalanceados
 │
 ├── 📁 03-Recursos/                  # Recursos adicionales
 │   ├── 📄 datasets.md               # Datasets creativos
@@ -64,6 +83,11 @@ U02-Aplicaciones-Creativas/
 - **NLP Creativo**: Generación de texto, modelos de lenguaje, storytelling
 - **Procesamiento de Imágenes**: Style transfer, generación de arte
 - **Modelos Secuenciales**: RNN, LSTM, GRU para datos temporales
+- **Atención Personalizada**: Mecanismos de atención para series temporales
+- **Modelos Multi-Input**: Functional API para datos heterogéneos
+- **Regularización Avanzada**: Manejo de datos ruidosos y desbalanceados
+- **Transfer Learning**: Fine-tuning de modelos pre-entrenados
+- **Análisis de Gradientes**: tf.GradientTape para interpretabilidad
 
 ### **💡 Creativas (Creative Skills):**
 - **Composición Musical**: Estructura, armonía, ritmo, melodía
@@ -87,14 +111,18 @@ U02-Aplicaciones-Creativas/
 3. **Lab 2.1** - Compositor de música y letras (proyecto principal)
 4. **Lab 2.2** - Generador de arte digital (opcional)
 5. **Lab 2.3** - Asistente de guiones (opcional)
+6. **Lab 2.4** - Sistema de alerta temprana (nuevo - aplicación práctica)
+7. **Lab 2.5** - Clasificador de café (nuevo - agritech)
 
 ### **⏰ Tiempo Estimado:**
 - **Teoría**: 10-12 horas
 - **Lab 2.1**: 20-25 horas
 - **Lab 2.2**: 15-18 horas
 - **Lab 2.3**: 12-15 horas
+- **Lab 2.4**: 18-20 horas
+- **Lab 2.5**: 20-22 horas
 - **Proyecto Final**: 10-12 horas
-- **Total**: 67-82 horas
+- **Total**: 105-124 horas
 
 ---
 
