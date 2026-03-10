@@ -1,0 +1,47 @@
+# Unidad 0: Fundamentos y Buenas Prácticas del AI Developer
+# Dependencias para desarrollo profesional y buenas prácticas
+
+# Core Python (Versiones estables)
+python>=3.9.0,<3.13.0
+
+# Formateo y Linting (PEP 8)
+black>=23.0.0
+autopep8>=2.0.0
+flake8>=6.0.0
+pylint>=2.17.0
+
+# Type Hinting y Validación
+mypy>=1.5.0
+types-requests>=2.31.0
+
+# Testing (Pruebas Unitarias)
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.0
+
+# Documentación
+sphinx>=7.1.0
+sphinx-rtd-theme>=1.3.0
+
+# Entorno y Configuración
+python-dotenv>=1.0.0
+pyyaml>=6.0.0
+
+# Desarrollo y Debugging
+jupyter>=1.0.0
+ipython>=8.15.0
+ipdb>=0.13.0
+
+# Control de Versiones de Datos
+dvc>=3.30.0
+
+# Integración Continua (CI/CD)
+pre-commit>=3.4.0
+
+# Análisis de Código
+bandit>=1.7.0
+safety>=2.3.0
+
+# Manejo de Dependencias
+pip-tools>=7.3.0
+pipdeptree>=2.13.0

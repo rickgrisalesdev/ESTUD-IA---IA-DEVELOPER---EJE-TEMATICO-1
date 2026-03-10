@@ -1,0 +1,143 @@
+# Gitignore estándar para proyectos de Python e IA
+# =====================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Entornos Virtuales
+.venv/
+venv/
+ENV/
+env/
+
+# IDEs y Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+.tox/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Datos y Modelos (generalmente no se suben a Git)
+data/raw/*
+data/processed/*
+data/external/*
+outputs/models/*
+outputs/logs/*
+outputs/figures/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/external/.gitkeep
+!outputs/models/.gitkeep
+!outputs/logs/.gitkeep
+!outputs/figures/.gitkeep
+
+# Variables de Entorno
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Archivos de configuración sensibles
+config/secrets.yaml
+config/production.yaml
+
+# Machine Learning
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.pb
+*.ckpt
+*.pth
+
+# Data Version Control
+.dvc/
+.dvcignore
+
+# Sistema Operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Documentación generada
+docs/_build/
+site/
+
+# Perfiles de PyCharm
+.idea/
+
+# Perfiles de VS Code
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# Temporales
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Archivos de backup
+*.bak
+*.backup
+*~
+
+# Base de datos
+*.db
+*.sqlite
+*.sqlite3
+
+# Archivos comprimidos
+*.zip
+*.tar.gz
+*.rar
+
+# Específicos del proyecto
+experiments/
+checkpoints/
+wandb/
+mlruns/

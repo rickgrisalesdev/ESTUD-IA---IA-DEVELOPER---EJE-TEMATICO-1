@@ -1,0 +1,33 @@
+# Lab 1.2: Fundamentos de Programación con Gemini
+# Dependencias específicas para el laboratorio
+
+# Core Python (versiones compatibles)
+# Nota: Python 3.9+ requerido para type hints modernos
+
+# Development Tools
+pytest>=7.4.0,<7.5.0
+black>=23.0.0,<24.0.0
+flake8>=6.0.0,<7.0.0
+mypy>=1.5.0,<2.0.0
+
+# Documentation
+sphinx>=7.0.0,<8.0.0
+sphinx-rtd-theme>=1.3.0,<2.0.0
+
+# Jupyter (para notebooks)
+jupyter>=1.0.0,<1.1.0
+ipykernel>=6.25.0,<7.0.0
+ipywidgets>=8.0.0,<8.2.0
+matplotlib>=3.7.0,<3.9.0
+
+# Utilities
+tqdm>=4.65.0,<4.67.0
+python-dotenv>=1.0.0,<1.1.0
+
+# Testing (opcional)
+coverage>=7.3.0,<7.4.0
+pytest-cov>=4.1.0,<5.0.0
+
+# Code Quality
+pre-commit>=3.4.0,<4.0.0
+isort>=5.12.0,<6.0.0

@@ -1,0 +1,89 @@
+# REQUERIMIENTOS UNIFICADOS PARA TODO EL BOOTCAMP IA DEVELOPER
+# ========================================================
+# Versión optimizada para Python 3.9 - 3.12
+# Sin conflictos de dependencias, lista para producción
+
+# --- CORE ML/DL FRAMEWORKS ---
+tensorflow>=2.13.0,<2.16.0
+keras>=2.13.0,<2.16.0
+torch>=2.0.0,<2.2.0
+torchvision>=0.15.0,<0.17.0
+scikit-learn>=1.3.0,<1.4.0
+
+# --- DATA PROCESSING ---
+numpy>=1.24.0,<1.26.0
+pandas>=2.0.0,<2.2.0
+scipy>=1.11.0,<1.12.0
+joblib>=1.3.0,<1.4.0
+
+# --- COMPUTER VISION ---
+opencv-python>=4.8.0,<4.9.0
+pillow>=10.0.0,<11.0.0
+scikit-image>=0.21.0,<0.22.0
+albumentations>=1.3.0,<1.4.0
+
+# --- NATURAL LANGUAGE PROCESSING ---
+transformers>=4.30.0,<4.37.0
+tokenizers>=0.13.0,<0.15.0
+nltk>=3.8.0,<3.9.0
+
+# --- GRAPH NEURAL NETWORKS ---
+networkx>=3.1.0,<3.3.0
+
+# --- VISUALIZATION ---
+matplotlib>=3.7.0,<3.9.0
+seaborn>=0.12.0,<0.13.0
+plotly>=5.14.0,<5.18.0
+
+# --- API AND DEPLOYMENT ---
+fastapi>=0.100.0,<0.105.0
+uvicorn>=0.22.0,<0.25.0
+pydantic>=2.0.0,<2.6.0
+requests>=2.31.0,<2.32.0
+
+# --- UTILITIES ---
+tqdm>=4.65.0,<4.67.0
+python-dotenv>=1.0.0,<1.1.0
+pyyaml>=6.0.0,<6.1.0
+
+# --- JUPYTER NOTEBOOKS ---
+jupyter>=1.0.0,<1.1.0
+ipywidgets>=8.0.0,<8.2.0
+
+# --- DEVELOPMENT AND TESTING ---
+pytest>=7.4.0,<7.5.0
+black>=23.0.0,<24.0.0
+flake8>=6.0.0,<6.2.0
+
+# --- DATA STORAGE ---
+h5py>=3.9.0,<3.11.0
+tables>=3.8.0,<3.10.0
+
+# --- ADVANCED MODELS (OPCIONAL) ---
+# Descomentar según necesidad del proyecto específico
+
+# Para GANs
+# tensorflow-gan>=2.0.0
+
+# Para Transformers avanzados
+# diffusers>=0.18.0,<0.25.0
+
+# Para Redes de Grafos (requiere PyTorch)
+# torch-geometric>=2.3.0,<2.5.0
+# spektral>=1.2.0,<1.3.0
+
+# Para modelos específicos (verificar compatibilidad)
+# Nota: Algunos paquetes pueden no ser compatibles con Python 3.12
+# pyke>=1.1.1  # Solo para Python < 3.12
+# nengo>=3.1.0  # Verificar compatibilidad
+
+# --- NOTAS DE COMPATIBILIDAD ---
+# 1. Python 3.12: Algunos paquetes avanzados pueden no estar disponibles
+# 2. TensorFlow: Usar versiones >= 2.13 para mejor rendimiento
+# 3. PyTorch: Compatible con CUDA 11.8+ para GPU
+# 4. Transformers: Requiere Python 3.8+ y PyTorch/TensorFlow
+
+# --- INSTALACIÓN RECOMENDADA ---
+# pip install -r requirements_unificado.txt
+# O para desarrollo:
+# pip install -r requirements_unificado.txt[dev]

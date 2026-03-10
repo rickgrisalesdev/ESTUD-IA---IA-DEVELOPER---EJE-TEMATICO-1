@@ -1,0 +1,227 @@
+# 📦 **Requisitos del Sistema - Detección de Daños en Paquetes**
+
+## 🐍 **Python y Sistema Operativo**
+- **Python**: 3.8+ (recomendado 3.9 o 3.10)
+- **Sistema**: Windows 10/11, macOS 10.14+, Linux (Ubuntu 18.04+)
+
+## 📚 **Dependencias Principales**
+
+### **Deep Learning y Machine Learning**
+```
+tensorflow>=2.20.0          # Framework principal de ML/DL
+keras>=2.20.0              # API de alto nivel para redes neuronales
+scikit-learn>=1.0.0        # Métricas y utilidades de ML
+```
+
+### **Procesamiento de Imágenes**
+```
+opencv-python>=4.13.0      # Procesamiento de imágenes y visión artificial
+Pillow>=9.0.0              # Manipulación de imágenes
+scikit-image>=0.19.0        # Procesamiento de imágenes avanzado
+albumentations>=2.0.8       # Data augmentation para imágenes
+```
+
+### **Visualización y Análisis**
+```
+matplotlib>=3.10.8          # Gráficos y visualizaciones
+seaborn>=0.11.0             # Gráficos estadísticos
+plotly>=5.0.0               # Visualizaciones interactivas
+```
+
+### **Manejo de Datos**
+```
+numpy>=1.21.0               # Operaciones numéricas y arrays
+pandas>=1.3.0               # Manipulación y análisis de datos
+```
+
+### **Interface Web**
+```
+streamlit>=1.55.0           # Framework para dashboards web
+```
+
+### **Utilidades del Sistema**
+```
+psutil>=5.8.0               # Monitoreo de recursos del sistema
+tqdm>=4.62.0                # Barras de progreso
+python-dotenv>=0.19.0       # Manejo de variables de entorno
+```
+
+## 🔧 **Requisitos de Hardware**
+
+### **Mínimos (CPU)**
+- **CPU**: Intel i5 o AMD Ryzen 5 (4+ cores)
+- **RAM**: 8GB DDR4
+- **Almacenamiento**: 10GB disponibles
+- **GPU**: No requerida (entrenamiento más lento)
+
+### **Recomendados (GPU)**
+- **CPU**: Intel i7/i9 o AMD Ryzen 7/9 (8+ cores)
+- **RAM**: 16GB DDR4+
+- **GPU**: NVIDIA GTX 1660 o superior (6GB+ VRAM)
+- **Almacenamiento**: 20GB disponibles (SSD recomendado)
+
+### **Óptimos (GPU de Alto Rendimiento)**
+- **CPU**: Intel i9 o AMD Ryzen 9 (12+ cores)
+- **RAM**: 32GB DDR4+
+- **GPU**: NVIDIA RTX 3060/4060 o superior (8GB+ VRAM)
+- **Almacenamiento**: 50GB disponibles (NVMe SSD)
+
+## 🖥️ **Requisitos de Software**
+
+### **NVIDIA GPU (Opcional pero Recomendado)**
+```
+CUDA Toolkit: 11.2+         # Para GPU NVIDIA
+cuDNN: 8.1+                 # Bibliotecas de deep learning
+Driver: NVIDIA 470+          # Drivers actualizados
+```
+
+### **Entorno de Desarrollo**
+```
+Git: 2.25+                  # Control de versiones
+VS Code o PyCharm            # IDE recomendado
+Jupyter Notebook             # Para análisis exploratorio
+```
+
+## 📦 **Instalación**
+
+### **1. Crear Entorno Virtual**
+```bash
+# Con venv
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+
+# Con conda
+conda create -n deteccion_daños python=3.9
+conda activate deteccion_daños
+```
+
+### **2. Instalar Dependencias**
+```bash
+# Instalar desde requirements.txt
+pip install -r requirements.txt
+
+# Instalación individual
+pip install tensorflow==2.20.0
+pip install streamlit==1.55.0
+pip install opencv-python==4.13.0
+pip install matplotlib==3.10.8
+pip install pandas==1.3.0
+pip install numpy==1.21.0
+pip install scikit-learn==1.0.0
+pip install scikit-image==0.19.0
+pip install albumentations==2.0.8
+pip install pillow==9.0.0
+pip install seaborn==0.11.0
+pip install plotly==5.0.0
+pip install psutil==5.8.0
+pip install tqdm==4.62.0
+pip install python-dotenv==0.19.0
+```
+
+### **3. Verificar Instalación**
+```bash
+# Verificar TensorFlow
+python -c "import tensorflow as tf; print(f'TensorFlow: {tf.__version__}')"
+
+# Verificar GPU (si aplica)
+python -c "import tensorflow as tf; print(f'GPU Available: {len(tf.config.list_physical_devices(\"GPU\"))}')"
+
+# Verificar Streamlit
+streamlit --version
+```
+
+## 📊 **Requisitos del Dataset**
+
+### **Estructura de Carpetas**
+```
+data/processed/
+├── danado/                   # Imágenes de paquetes dañados
+│   ├── img001.jpg
+│   ├── img002.jpg
+│   └── ...
+└── sano/                     # Imágenes de paquetes en buen estado
+    ├── img001.jpg
+    ├── img002.jpg
+    └── ...
+```
+
+### **Especificaciones de Imágenes**
+- **Formatos**: JPG, JPEG, PNG
+- **Tamaño**: 224x224 píxeles (redimensionado automático)
+- **Color**: RGB (3 canales)
+- **Calidad**: Buena iluminación, fondo claro
+- **Cantidad**: Mínimo 50 imágenes por clase (recomendado 200+)
+
+### **Requisitos de Almacenamiento**
+- **Dataset pequeño (100 imágenes)**: ~50MB
+- **Dataset mediano (1000 imágenes)**: ~500MB
+- **Dataset grande (10000 imágenes)**: ~5GB
+- **Modelos entrenados**: ~10-50MB por modelo
+
+## 🌐 **Requisitos de Red**
+
+### **Para Despliegue Web**
+- **Ancho de banda**: 10 Mbps+ para streaming de imágenes
+- **Latencia**: <100ms para experiencia fluida
+- **Puertos**: 8501-8506 para Streamlit (configurable)
+
+### **Para Descarga de Modelos**
+- **Modelos pre-entrenados**: 100MB-1GB
+- **Datasets públicos**: 500MB-10GB
+
+## 🔍 **Verificación del Sistema**
+
+### **Script de Verificación**
+```python
+import sys
+import tensorflow as tf
+import streamlit as st
+import cv2
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+print("=== Verificación del Sistema ===")
+print(f"Python: {sys.version}")
+print(f"TensorFlow: {tf.__version__}")
+print(f"Streamlit: {st.__version__}")
+print(f"OpenCV: {cv2.__version__}")
+print(f"NumPy: {np.__version__}")
+print(f"Pandas: {pd.__version__}")
+
+# Verificar GPU
+gpus = tf.config.list_physical_devices('GPU')
+print(f"GPUs disponibles: {len(gpus)}")
+if gpus:
+    for gpu in gpus:
+        print(f"  - {gpu.name}")
+
+# Verificar memoria
+import psutil
+mem = psutil.virtual_memory()
+print(f"RAM Total: {mem.total / (1024**3):.1f} GB")
+print(f"RAM Disponible: {mem.available / (1024**3):.1f} GB")
+```
+
+## ⚠️ **Notas Importantes**
+
+### **Compatibilidad**
+- **Windows**: Compatible con todas las versiones
+- **macOS**: M1/M2 requiere TensorFlow 2.5+ con Metal
+- **Linux**: Recomendado para producción
+
+### **Rendimiento**
+- **CPU Training**: 10-30 minutos por época (dataset pequeño)
+- **GPU Training**: 1-5 minutos por época (dataset pequeño)
+- **Inference**: <1 segundo por imagen (CPU), <0.1 segundos (GPU)
+
+### **Limitaciones Conocidas**
+- **Memoria**: Dataset grandes pueden requerir más RAM
+- **GPU**: NVIDIA recomendada, AMD no soportada oficialmente
+- **macOS M1/M2**: Algunas características pueden ser limitadas
+
+---
+
+**📦 Versión de Requisitos: 1.0**  
+*Última Actualización: Marzo 2026*
